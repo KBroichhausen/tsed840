@@ -17,7 +17,8 @@ export class BService extends IBService {
     // still works
     // @Inject() private readonly aService: AService;
 
-    public $onInit(): void {
+    public $afterInit(): void {
+        $log.debug(`$afterInit called`);
         $log.debug(`aService is: ${this.aService}`);
         if (this.aService) {
             $log.debug(this.aService.returnSomething());

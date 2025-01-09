@@ -14,12 +14,8 @@ export const IAServiceToken: unique symbol = Symbol("IAService");
 export class AService extends IAService {
     private something: string = "Unmodified";
 
-    public $beforeInit(): void {
-        $log.debug("$beforeInit Hook: I'm not called anymore :(");
-	}
-
     public $onInit(): void {
-        $log.debug("$onInit Hook: I get still called :)");
+        $log.debug("$beforeInit called");
 	}
 
     public doSomething(): void {
