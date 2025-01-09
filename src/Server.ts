@@ -6,6 +6,8 @@ import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/ajv";
 import {config} from "./config/index.js";
 import * as rest from "./controllers/rest/index.js";
+import "./services/AService.js"
+import "./services/BService.js"
 
 @Configuration({
   ...config,

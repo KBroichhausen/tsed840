@@ -21,5 +21,6 @@ if (isProduction) {
 }
 
 export default <DILoggerOptions> {
+	level: "debug",
   disableRoutesSummary: isProduction
 };
