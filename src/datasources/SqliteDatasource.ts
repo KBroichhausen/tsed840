@@ -1,12 +1,13 @@
 import {registerProvider} from "@tsed/di";
 import {DataSource} from "typeorm";
 import {Logger} from "@tsed/logger";
+import * as myEntites from "src/entities/index.js";
 
 export const SqliteDatasource = Symbol.for("SqliteDatasource");
 export type SqliteDatasource = DataSource;
 export const sqliteDatasource = new DataSource({
   type: "sqlite",
-  entities: [],
+  entities: [...Object.values(myEntites)],
   database: "database.sqlite"
 });
 

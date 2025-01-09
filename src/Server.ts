@@ -4,6 +4,7 @@ import {application} from "@tsed/platform-http";
 import "@tsed/platform-log-request"; // remove this import if you don&#x27;t want log request
 import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/ajv";
+import "@tsed/swagger";
 import {config} from "./config/index.js";
 import * as rest from "./controllers/rest/index.js";
 
@@ -21,6 +22,18 @@ import * as rest from "./controllers/rest/index.js";
       ...Object.values(rest)
     ]
   },
+  swagger: [
+		{
+			path: "/doc",
+			specVersion: "3.0.3",
+			spec: {
+				info: {
+					title: "Api documentation",
+					version: "1.0.0"
+				}
+			}
+		}
+	],
   middlewares: [
     "cors",
     "cookie-parser",
